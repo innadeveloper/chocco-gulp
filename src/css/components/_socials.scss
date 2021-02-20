@@ -1,0 +1,29 @@
+.socials {
+    display: flex;
+    align-items: center;
+}
+
+.socials__item {
+    margin-right: 14px; 
+    
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.socials__link {
+    display: block;
+    text-decoration: none;
+    width: rem(20px);
+    height: rem(16px);
+    background: center center no-repeat;
+}
+
+.social-icon {
+    width: rem(20px);
+    fill:  #B3B3B3;
+
+    &:hover {
+        fill: #292929;
+    }
+}

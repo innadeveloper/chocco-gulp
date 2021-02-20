@@ -1,0 +1,25 @@
+.order-section {
+    position: relative;
+    background: url("../img/decor/blueberry.png") left 5% top 89% no-repeat, url("../img/decor/order-lief.png") right 1% top 89% no-repeat, url("../img/decor/background-order-section.png") no-repeat;
+    background-size: auto, auto, cover;
+
+    @include tablets {
+        background: url("../img/decor/background-order-section.png") no-repeat;
+        background-size: cover;
+    }
+
+    &::after {
+        content: url("../img/decor/blackberry.png");
+        position: absolute;
+        top: rem(-150px);
+        right: 0;
+
+        @include tablets {
+            content: url("../img/tablets/blackberry.png");
+            position: absolute;
+            top: rem(-90px);
+            right: 0;
+        }
+    }
+}
+

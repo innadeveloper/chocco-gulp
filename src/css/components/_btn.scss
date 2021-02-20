@@ -1,0 +1,63 @@
+.btn {
+    font-size: rem(16px);
+    font-weight: bold;
+    padding: rem(22px) rem(46px);
+    text-transform: uppercase;
+    border-radius: rem(100px);
+    line-height: 1;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+
+    &--theme--white {
+        background: #fff;
+        color: $darkGreen;
+
+        &:hover {
+            color: #fff;
+            background: $darkGreen;
+        }
+    }
+
+    &--theme--green {
+        background: $darkGreen;
+        color: #fff;
+        margin-right: rem(22px);
+
+        &:hover {
+            color: $darkGreen;
+            background: #fff;
+        }        
+    }
+
+    &--theme--green--slider {
+        background: $darkGreen;
+        color: #fff;
+
+        &:hover {
+            color: $darkGreen;
+            background: #fff;
+        }        
+    }
+
+    &--theme--transparent {
+        background: transparent;
+        color: #497870;
+        text-transform: none;
+        font-weight: normal;
+        padding: 0;
+        font-size: rem(18px);
+
+        &:hover {
+            color: #000;
+        }
+    }
+}
+
+button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+}

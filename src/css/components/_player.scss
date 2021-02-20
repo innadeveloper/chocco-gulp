@@ -1,0 +1,206 @@
+.player {
+    position: relative;
+    width: 100%;
+    height: 100%;  
+   
+    &.active {
+        .player__splash {
+            display: none;       
+        }   
+    }  
+
+    &.paused {
+        .player__start {
+            position: relative;
+            width: rem(12px);
+            height: rem(16px); 
+            border: none;    
+            
+            @include tablets {
+                width: rem(10px);
+                height: rem(14px); 
+            }
+
+            @include phones {
+                width: rem(8px);
+                height: rem(12px);  
+            } 
+            
+            &::after,
+            &::before {
+                content: "";
+                display: flex;
+                position: absolute;
+                width: rem(4px);
+                top: 0;
+                bottom: 0;
+                background: #626262;
+
+                @include tablets {
+                    width: rem(3px);
+                }
+
+                @include phones {
+                    width: rem(2.5px);
+                } 
+            }
+    
+            &::after {
+                right: 0;
+            }
+    
+            &::before {
+                left: 0;
+            }             
+        }       
+    }
+}
+
+.player__elem {
+    width: rem(660px);
+    height: rem(405px); 
+
+    @include tablets {
+        width: rem(594px);
+        height: rem(351px);
+    }
+   
+    @include phones {
+        width: rem(394px);
+        height: rem(233px);
+    }
+}
+
+.player__splash {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../img/decor/splashscreen.jpg) center center/ cover no-repeat;
+    cursor: pointer;
+
+    &::before {
+        content: url(../img/decor/button-play.png);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: rem(75px);
+        height: rem(110px);
+        transform: translate(-50%, -50%);       
+        cursor: pointer;
+        z-index: 1000;
+
+        @include tablets {
+            content: url(../img/tablets/button-play-tablets.png);
+        }
+
+        @include phones {
+            content: url(../img/tablets/button-play-phones.png);
+            
+        } 
+    }
+}
+
+.player__controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;    
+    padding: 0 rem(25px);
+    height: rem(35px);
+    background: #404040; 
+
+    @include tablets {
+        height: rem(34px);
+        padding: 0 rem(12px);
+    }
+
+    @include phones {
+        height: rem(25px);
+        padding: 0 rem(10px);
+    }
+}
+
+.player__start::before {
+    content: url(../img/icons/start.png);
+    position: absolute;
+    top: 28.5%;
+    width: rem(12px);
+    height: rem(16px); 
+    border: none; 
+
+    @include tablets {
+        content: url(../img/tablets/start-tablets.png);
+        width: rem(10px);
+        height: rem(14px); 
+    }
+
+    @include phones {
+        content: url(../img/tablets/start-phones.png);
+        top: 8%;
+        width: rem(8px);
+        height: rem(12px); 
+    } 
+}   
+
+.player__playback {
+    position: absolute;
+    left: 10%;
+    height: rem(16px);
+    width: rem(446px); 
+    border: none;
+    background: url(../img/icons/scale.png) no-repeat;
+    margin-top: rem(12.5px);
+
+    @include tablets {
+        background: url(../img/tablets/scale-tablets.png) no-repeat;
+        left: 8%;
+        width: rem(400px);
+    }
+
+    @include phones {
+        background: url(../img/tablets/scale-phones.png) no-repeat;
+        left: 8%;
+        width: rem(235px);
+    }
+}
+
+.player__playback-button {
+    position: absolute;
+    top: -20%;
+    left: 0;
+    background: #626262;
+    border-radius: rem(50px);
+    border: none;
+    width: rem(12px);
+    height: rem(12px);
+    padding: 0;
+    transition: translate(-50%, -50%);
+
+    @include tablets {
+        width: rem(11px);
+        height: rem(11px);
+    }
+
+    @include phones {
+        top: -15%;
+        width: rem(8px);
+        height: rem(8px);
+    } 
+}
+
+.player__duration-completed,
+.player__duration-estimate {
+    @include tablets {
+        font-size: rem(18px);
+        margin-bottom: rem(200px);
+    }
+
+    @include phones {
+        font-size: rem(17px);
+    } 
+}

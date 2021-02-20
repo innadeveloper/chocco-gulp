@@ -1,0 +1,16 @@
+.team-section {
+    position: relative;
+
+    &::before {
+        content: url("../img/decor/raspberries.png");
+        position: absolute;
+        bottom: rem(-60px);
+        left: rem(20px);
+        z-index: 100;
+
+        @include tablets {
+            content: url("../img/tablets/raspberries.png");
+        }  
+    }         
+}
+    

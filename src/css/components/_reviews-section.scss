@@ -1,0 +1,24 @@
+.reviews-section {
+    position: relative;
+    background: url("../img/decor/strawberry.png") right 2% top 22% no-repeat;
+
+    @include tablets {
+        background: url("../img/decor/strawberry.png") right -4% top 2% no-repeat;
+    }
+
+    &::before {
+        content: url("../img/decor/side-leaf-berries.png");
+        position: absolute;
+        bottom: rem(-160px);
+        left: 0;
+        z-index: $z-reviews-section;
+
+        @include tablets {
+            content: url("../img/tablets/side-leaf-berries.png");
+            position: absolute;
+            bottom: rem(-115px);
+            left: 0;
+            z-index: $z-reviews-section;
+        }
+    }
+}

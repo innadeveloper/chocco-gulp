@@ -1,0 +1,231 @@
+.product-slider__img--prev {
+    width: rem(14px);
+    fill: none;
+    stroke: #000;
+    stroke-width: rem(2px);
+    stroke-linecap: round;
+}
+
+.product-slider__img--next {
+    width: rem(14px);
+    fill: none;
+    stroke: #000;
+    stroke-width: rem(2px);
+    stroke-linecap: round;
+}
+
+.products__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;    
+}
+
+.products-slider {
+    overflow: hidden; 
+    
+    .bx-wrapper {
+        border: 0 !important; 
+        background: transparent;
+        box-shadow: none;
+        z-index: 1000;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+       
+    }
+}
+
+.product__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    @include tablets {
+        flex-direction: column;
+      }
+}
+
+.product__col--image {
+    flex: 1;
+    margin-right: rem(55px); 
+    
+    @include tablets {
+        margin-right: 0;
+    }
+}
+
+.product__img {
+    width: 100%;
+}
+
+.product__col--description {
+    flex: 1;
+}
+
+.product__ingredients {
+    background-color: #86C3D7;
+    border-radius: rem(4px);
+    width: rem(91px);
+    height: rem(91px);
+    margin-bottom: rem(23px);  
+    position: relative;
+    cursor: pointer;   
+    
+    @include tablets {
+        display: none;
+    }
+}
+
+.product__ingredients-img {
+    position: absolute;
+    left: 25%;
+    top: 15%;
+    width: rem(46px);
+    height: rem(46px);
+    fill: #fff;
+}
+
+.product__ingredients-title {
+    position: absolute;
+    left: 25%;
+    top: 70%;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+}
+
+.product__ingredients-dropdown-menu {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    padding: rem(32px) 0 rem(32px) rem(32px);
+    width: rem(273px);
+    top: 0%;
+    margin-left: rem(91px);
+    right: -9999px;
+    opacity: 0;
+    transition: opacity .5s;
+    font-size: 16px;
+    color: #000;
+    border-radius: 4px;
+    border: 1px solid transparent;
+}
+
+.product__ingredients:hover .product__ingredients-dropdown-menu {
+    left: 0;
+    opacity: 1;
+}
+
+.product__ingredient-item {
+    margin-bottom: rem(15px);
+    display: flex;
+    align-items: center;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.product__ingredient-icon {
+   margin-right: rem(16px);
+   fill: #000;
+}
+
+.product__ingredient-grape, 
+.product__ingredient-nut,
+.product__ingredient-almond,
+.product__ingredient-washing-powder,
+.product__ingredient-apitherapy,
+.product__ingredient-beans,
+.product__ingredient-oat,
+.product__ingredient-seaweed, 
+.product__ingredient-seeds {
+    width: rem(32px);
+    height: rem(32px);
+}
+
+.product__ingredient-name {
+    width: rem(145px);
+}
+
+.product__ingredient-weight {
+    justify-content: flex-end;
+}
+
+.product__title {
+    font-size: rem(36px);
+    text-align: left;
+    margin-bottom: rem(23px);  
+    line-height: 1.25;
+    
+    @include tablets {
+        text-align: center;
+      }
+}
+
+.product__text {
+    padding-right: 14%;
+    margin-bottom: rem(24px);
+    line-height: 1.25;
+    
+    @include tablets {
+        text-align: center;
+        padding-right: 0;
+      }
+}
+
+.product__description-block {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: rem(8px);   
+  
+    @include tablets {
+        justify-content: center;
+      }
+}
+
+.product__calorie-block {    
+    width: rem(150px);
+    
+    &:last-child {
+        width: auto;
+    }
+
+    @include phones {
+        width: rem(130px);
+    }
+}
+
+.product__calorie-text--amount {
+    font-weight: bold;    
+}
+
+.product__order-block {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;  
+    
+    @include tablets {
+        justify-content: center;
+      }
+}
+
+.product__price-block {
+    width: rem(150px);
+    
+    &:last-child {
+        width: auto;
+    }
+
+    @include phones {
+        width: rem(130px);
+    }
+}
+
+.product__price-value--font {
+    font-size: rem(60px);   
+}

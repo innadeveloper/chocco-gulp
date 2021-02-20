@@ -1,0 +1,17 @@
+.products-section {
+    position: relative;
+    background: #F8FAF9;
+
+    &::after {
+        content: url("../img/decor/blueberry-pattern-lief.png");
+        position: absolute;
+        bottom: rem(-200px);
+        right: 0;
+        z-index: 100;
+
+        @include tablets {
+            content: url("../img/tablets/blueberry-pattern-lief.png");
+        }
+    }      
+}
+    

@@ -1,0 +1,20 @@
+.headline {
+    text-align: center;
+    margin-bottom: rem(49px);  
+}
+
+.headline__title {
+    margin-bottom: rem(13px);
+
+    &--team {
+        margin-bottom: rem(53px);
+    }
+}
+
+.headline__subtitle {
+    padding: 0 26%;
+
+    @include phones {
+        padding: 0 5%;
+    }
+}
