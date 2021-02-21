@@ -12,4 +12,4 @@ module.exports = {
         'node_modules/bxslider/dist/jquery.bxslider.js',  
         'node_modules/jquery.fancybox/source/jquery.fancybox.js'    
     ]
-   }
+}
