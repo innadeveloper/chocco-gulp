@@ -42,52 +42,50 @@ task('copy:svg', () => {
 })
   
 task('styles', () => {
- return src([...STYLE_LIBS, `${SRC_PATH}/css/main.scss`])
+  return src([...STYLE_LIBS, `${SRC_PATH}/css/main.scss`])
  .pipe(gulpif(env === 'dev', sourcemaps.init()))
-   .pipe(concat('main.min.scss'))
-   .pipe(sassGlob())
-   .pipe(sass().on('error', sass.logError))
-   //.pipe(px2rem())
-   /* .pipe(gulpif(env === 'prod', autoprefixer({
+ .pipe(concat('main.min.scss'))
+ .pipe(sassGlob())
+ .pipe(sass().on('error', sass.logError))
+  //.pipe(px2rem())
+  /* .pipe(gulpif(env === 'prod', autoprefixer({
        browsers: ['last 2 versions'],
        cascade: false
      })))
-   .pipe(gulpif(env === 'prod', gcmq())) */
-   .pipe(gulpif(env === 'prod', cleanCSS()))
-   .pipe(gulpif(env === 'dev', sourcemaps.write()))
-   /* .pipe(autoprefixer({
+  .pipe(gulpif(env === 'prod', gcmq())) */
+  .pipe(gulpif(env === 'prod', cleanCSS()))
+  .pipe(gulpif(env === 'dev', sourcemaps.write()))
+  /* .pipe(autoprefixer({
      browsers: ['last 2 versions'],
      cascade: false
-   })) */
-   //.pipe(gcmq())
-    /*  .pipe(cleanCSS())
-     .pipe(sourcemaps.write()) */
-   .pipe(dest(DIST_PATH))
-   .pipe(reload({ stream: true }));
+  })) */
+  //.pipe(gcmq())
+  /*  .pipe(cleanCSS())
+  .pipe(sourcemaps.write()) */
+  .pipe(dest(DIST_PATH))
+  .pipe(reload({ stream: true }));
 });
 
 task('scripts', () => {
-    return src([...JS_LIBS, `${SRC_PATH}/js/*.js`])
-    .pipe(gulpif(env === 'dev', sourcemaps.init()))
-      .pipe(concat('main.min.js', {newLine: ';'}))
-      /* .pipe(babel({
+  return src([...JS_LIBS, `${SRC_PATH}/js/*.js`])
+  .pipe(gulpif(env === 'dev', sourcemaps.init()))
+  .pipe(concat('main.min.js', {newLine: ';'}))
+  /* .pipe(babel({
         presets: ['@babel/env']
-      })) */
-     // .pipe(uglify())
-     /* .pipe(gulpif(env === 'prod', babel({
+  })) */
+  // .pipe(uglify())
+  /* .pipe(gulpif(env === 'prod', babel({
       presets: ['@babel/env']
-    }))) */
-      /* .pipe(terser())  */
- 
-     /*  .pipe(sourcemaps.write()) */
-
-    /*  .pipe(gulpif(env === 'prod', babel({
+  }))) */
+  /* .pipe(terser())  */
+  /*  .pipe(sourcemaps.write()) */
+  /*  .pipe(gulpif(env === 'prod', babel({
       presets: ['@babel/env']
-    }))) */
-    .pipe(gulpif(env === 'prod', terser()))
-    .pipe(gulpif(env === 'dev', sourcemaps.write()))
-    .pipe(dest(DIST_PATH))
-    .pipe(reload({ stream: true }));
+  }))) */
+  .pipe(gulpif(env === 'prod', terser()))
+  .pipe(gulpif(env === 'dev', sourcemaps.write()))
+  .pipe(dest(DIST_PATH))
+  .pipe(reload({ stream: true }));
 });
 
 task('icons', () => {
@@ -113,17 +111,17 @@ task('icons', () => {
 
 task('images', () => {
   return src(`${SRC_PATH}/img/**/*.{jpg,jpeg,png}`)
-    .pipe(imagemin())
-    .pipe(dest(`${DIST_PATH}/img/`));
+  .pipe(imagemin())
+  .pipe(dest(`${DIST_PATH}/img/`));
 })
 
 task('server', () => {
- browserSync.init({
-     server: {
-         baseDir: "./DIST_PATH"
-     },
-     open: true
- });
+  browserSync.init({
+    server: {
+      baseDir: "./DIST_PATH"
+    },
+    open: true
+  });
 });
  
 task('watch', () => {
@@ -132,8 +130,7 @@ task('watch', () => {
   watch(`${SRC_PATH}/**/*.svg`, series('copy:svg'));
   watch(`${SRC_PATH}/js/*.js`, series('scripts'));
   watch(`${SRC_PATH}/img/icons/*.svg`, series('icons'));
-  watch(`${SRC_PATH}/img/**/*.{jpg,jpeg,png}`, series('images'));
-  
+  watch(`${SRC_PATH}/img/**/*.{jpg,jpeg,png}`, series('images'));  
 });
 
 task(

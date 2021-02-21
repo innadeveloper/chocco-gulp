@@ -6,8 +6,8 @@ module.exports = {
         'node_modules/bxslider/dist/jquery.bxslider.css'
     ],
     JS_LIBS : [
+        'node_modules/bxslider/dist/jquery.bxslider.js',
         'node_modules/mobile-detect/mobile-detect.js',
-        'node_modules/jquery-touchswipe/jquery.touchSwipe.js',
-        'node_modules/bxslider/dist/jquery.bxslider.js'
+        'node_modules/jquery-touchswipe/jquery.touchSwipe.js'        
     ]
 }
