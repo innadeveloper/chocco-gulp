@@ -8,12 +8,12 @@
 
 .review-box__item {
     padding: rem(42px) rem(42px);
-    background: #F8FAF9 url("../img/decor/berries-gray.png") right top 15% no-repeat;
+    background: #F8FAF9 url("img/decor/berries-gray.png") right top 15% no-repeat;
     overflow: hidden;
     position: relative;
   
     @include tablets {
-        background: #F8FAF9 url("../img/decor/berries-gray.png") right top 2% no-repeat;
+        background: #F8FAF9 url("img/decor/berries-gray.png") right top 2% no-repeat;
     }
 
 

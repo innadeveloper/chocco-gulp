@@ -1,5 +1,5 @@
 .hero {
-    background: url("../img/decor/big-leaf.png") right bottom no-repeat;
+    background: url("img/decor/big-leaf.png") right bottom no-repeat;
     background-color: $blue;
     //height: 100vh;
     height: 100%;
@@ -8,7 +8,7 @@
     position: relative;
 
     @include phones {
-        background: url("../img/phones/big-leaf.png") right bottom no-repeat;
+        background: url("img/phones/big-leaf.png") right bottom no-repeat;
         background-color: $blue;
     }
 
@@ -23,14 +23,14 @@
     }
 
     &::before {
-        content: url("../img/decor/corner-leaf.png");
+        content: url("img/decor/corner-leaf.png");
         position: absolute;
         bottom: rem(-40px);
         left: 2%;        
     }
 
     &::after {
-        content: url("../img/decor/berries-and-leaves.png");
+        content: url("img/decor/berries-and-leaves.png");
         position: absolute;
         bottom: rem(-40px);
         right: 0;
@@ -53,7 +53,7 @@
             content: "";            
             width: rem(326px);
             height: rem(339px);
-            background: url("../img/tablets/hero-bars.png") center center / contain no-repeat;
+            background: url("img/tablets/hero-bars.png") center center / contain no-repeat;
             margin-bottom: 16px;    
         }
     }
@@ -66,7 +66,7 @@
 }
 
 .hero__container {
-    background: url("../img/decor/chocolates.png") right center / 50% auto no-repeat;
+    background: url("img/decor/chocolates.png") right center / 50% auto no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

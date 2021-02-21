@@ -11,20 +11,20 @@
         //padding: 0 rem(150px);  
         
         &::before {
-            content: url("../img/decor/left-leaf.png");
+            content: url("img/decor/left-leaf.png");
             position: absolute;
             bottom: rem(-70px);
             left: rem(-110px);
     
             @include tablets {
-                content: url("../img/tablets/left-leaf.png");
+                content: url("img/tablets/left-leaf.png");
                 position: absolute;
                 bottom: rem(80px);
                 left: rem(-101px);
             }
 
             @include phones {
-                content: url("../img/tablets/left-leaf.png");
+                content: url("img/tablets/left-leaf.png");
                 position: absolute;
                 bottom: rem(-70px);
                 left: rem(-63px);
@@ -32,20 +32,20 @@
         }
     
         &::after {
-            content: url("../img/decor/right-leaf.png");
+            content: url("img/decor/right-leaf.png");
             position: absolute;
             top: rem(-70px);
             right: rem(-120px);
     
             @include tablets {
-                content: url("../img/tablets/right-leaf.png");
+                content: url("img/tablets/right-leaf.png");
                 position: absolute;
                 top: rem(-50px);
                 right: rem(-55px);
             }
 
             @include phones {
-                content: url("../img/tablets/right-leaf.png");
+                content: url("img/tablets/right-leaf.png");
                 position: absolute;
                 top: rem(-50px);
                 right: rem(-50px);

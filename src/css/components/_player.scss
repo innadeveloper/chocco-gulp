@@ -77,11 +77,11 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url(../img/decor/splashscreen.jpg) center center/ cover no-repeat;
+    background: url(img/decor/splashscreen.jpg) center center/ cover no-repeat;
     cursor: pointer;
 
     &::before {
-        content: url(../img/decor/button-play.png);
+        content: url(img/decor/button-play.png);
         position: absolute;
         top: 50%;
         left: 50%;
@@ -92,11 +92,11 @@
         z-index: 1000;
 
         @include tablets {
-            content: url(../img/tablets/button-play-tablets.png);
+            content: url(img/tablets/button-play-tablets.png);
         }
 
         @include phones {
-            content: url(../img/tablets/button-play-phones.png);
+            content: url(img/tablets/button-play-phones.png);
             
         } 
     }
@@ -126,7 +126,7 @@
 }
 
 .player__start::before {
-    content: url(../img/icons/start.png);
+    content: url(img/icons/start.png);
     position: absolute;
     top: 28.5%;
     width: rem(12px);
@@ -134,13 +134,13 @@
     border: none; 
 
     @include tablets {
-        content: url(../img/tablets/start-tablets.png);
+        content: url(img/tablets/start-tablets.png);
         width: rem(10px);
         height: rem(14px); 
     }
 
     @include phones {
-        content: url(../img/tablets/start-phones.png);
+        content: url(img/tablets/start-phones.png);
         top: 8%;
         width: rem(8px);
         height: rem(12px); 
@@ -153,17 +153,17 @@
     height: rem(16px);
     width: rem(446px); 
     border: none;
-    background: url(../img/icons/scale.png) no-repeat;
+    background: url(img/icons/scale.png) no-repeat;
     margin-top: rem(12.5px);
 
     @include tablets {
-        background: url(../img/tablets/scale-tablets.png) no-repeat;
+        background: url(img/tablets/scale-tablets.png) no-repeat;
         left: 8%;
         width: rem(400px);
     }
 
     @include phones {
-        background: url(../img/tablets/scale-phones.png) no-repeat;
+        background: url(img/tablets/scale-phones.png) no-repeat;
         left: 8%;
         width: rem(235px);
     }

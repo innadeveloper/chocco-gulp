@@ -36,18 +36,13 @@ task('copy:html', () => {
 })
 
 task('copy:svg', () => {
-  return src(`${SRC_PATH}/*.svg`)
+  return src(`${SRC_PATH}/**/*.svg`)
     .pipe(dest(DIST_PATH))
     .pipe(reload({ stream: true }));
  })
+
+ 
   
-/* const css = [
- 'node_modules/normalize.css/normalize.css',
- 'node_modules/bxslider/dist/jquery.bxslider.css',
- 'node_modules/jquery.fancybox/source/',   
- 
-]; */
- 
 task('styles', () => {
  return src([...STYLE_LIBS, `${SRC_PATH}/css/main.scss`])
  .pipe(gulpif(env === 'dev', sourcemaps.init()))
@@ -72,15 +67,6 @@ task('styles', () => {
    .pipe(dest(DIST_PATH))
    .pipe(reload({ stream: true }));
 });
-
-/* const libs = [
-  'node_modules/jquery/dist/jquery.js',
-  'node_modules/mobile-detect/mobile-detect.js',
-  'node_modules/jquery-touchswipe/jquery.touchSwipe.js',
-  'node_modules/bxslider/dist/jquery.bxslider.js',  
-  'node_modules/jquery.fancybox/source/jquery.fancybox.js',    
-  'src/js/*.js'
- ]; */
 
 task('scripts', () => {
     return src([...JS_LIBS, `${SRC_PATH}/js/*.js`])
@@ -128,16 +114,14 @@ task('icons', () => {
  });
 
 task('images', () => {
-  return src(`${SRC_PATH}/img/**/*.{jpg,png,webp}`)
+  return src(`${SRC_PATH}/img/**/*.{jpg,jpeg,png}`)
     .pipe(imagemin())
     .pipe(dest(`${DIST_PATH}/img/`));
 })
 
-task('video', () => {
-  return src(`${SRC_PATH}/video/*.mp4`)
-  .pipe(dest(`${DIST_PATH}/video`));
-})
- 
+
+
+
 task('server', () => {
  browserSync.init({
      server: {
@@ -150,10 +134,11 @@ task('server', () => {
 task('watch', () => {
   watch(`${SRC_PATH}/css/**/*.scss`, series('styles'));
   watch(`${SRC_PATH}/*.html`, series('copy:html'));
-  watch(`${SRC_PATH}/*.svg`, series('copy:svg'));
+  watch(`${SRC_PATH}/**/*.svg`, series('copy:svg'));
   watch(`${SRC_PATH}/js/*.js`, series('scripts'));
   watch(`${SRC_PATH}/img/icons/*.svg`, series('icons'));
-  watch(`${SRC_PATH}/img/**/*.{jpg,png}`, series('images'));
+  watch(`${SRC_PATH}/img/**/*.{jpg,jpeg,png}`, series('images'));
+  
 });
 
 
@@ -161,7 +146,7 @@ task(
   'build',
   series(
     'clean',
-    parallel('copy:html', 'copy:svg', 'styles', 'scripts', 'icons', 'images', 'video'))
+    parallel('copy:html', 'copy:svg', 'styles', 'scripts', 'icons', 'images'))
 );
 
  
@@ -169,7 +154,7 @@ task(
   'default',
   series(
     'clean',
-    parallel('copy:html', 'copy:svg', 'styles', 'scripts', 'icons', 'images', 'video'),
+    parallel('copy:html', 'copy:svg', 'styles', 'scripts', 'icons', 'images'),
     parallel('watch', 'server')
  )
 );
