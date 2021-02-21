@@ -39,9 +39,7 @@ task('copy:svg', () => {
   return src(`${SRC_PATH}/**/*.svg`)
     .pipe(dest(DIST_PATH))
     .pipe(reload({ stream: true }));
- })
-
- 
+})
   
 task('styles', () => {
  return src([...STYLE_LIBS, `${SRC_PATH}/css/main.scss`])
@@ -119,9 +117,6 @@ task('images', () => {
     .pipe(dest(`${DIST_PATH}/img/`));
 })
 
-
-
-
 task('server', () => {
  browserSync.init({
      server: {
@@ -141,14 +136,12 @@ task('watch', () => {
   
 });
 
-
 task(
   'build',
   series(
     'clean',
     parallel('copy:html', 'copy:svg', 'styles', 'scripts', 'icons', 'images'))
 );
-
  
 task(
   'default',
@@ -158,4 +151,3 @@ task(
     parallel('watch', 'server')
  )
 );
- 
